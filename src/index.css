@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .system-scanlines {
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.15) 50%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.03),
+      rgba(0, 255, 0, 0.01),
+      rgba(0, 0, 255, 0.03)
+    );
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+  }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.98; }
+  5% { opacity: 0.95; }
+  10% { opacity: 0.9; }
+  15% { opacity: 1; }
+  80% { opacity: 0.98; }
+  100% { opacity: 1; }
+}
+
+.animate-flicker {
+  animation: flicker 0.1s infinite;
+}
+
+body {
+  background-color: #020617;
+  color: #cffafe;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for System Feel */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #22d3ee22;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22d3ee44;
+}
